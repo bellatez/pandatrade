@@ -130,8 +130,14 @@
       <!-- this row will not appear when printing -->
       <div class="row no-print">
         <div class="col-xs-12">
-          <a href="{{Route('bsprint')}}" target="_blank" class="btn btn-warning"><i class="fa fa-print"></i> Print</a>
-          </button>
+          <form class="form-horizontal" role="form" method="GET" action="{{Route('bsprint')}}">
+            {{ csrf_field() }}
+            <input type="hidden" value="{{$searchingVals['from']}}" name="from" />
+            <input type="hidden" value="{{$searchingVals['to']}}" name="to" />
+            <button type="submit" class="btn btn-warning">
+              <i class="fa fa-print"></i> Print
+            </button>
+          </form>
           <div class="pull-right">
             <form class="form-horizontal" role="form" method="GET" action="{{ route('balancesheet.pdf') }}">
                 {{ csrf_field() }}
