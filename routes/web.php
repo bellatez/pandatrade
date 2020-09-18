@@ -6,6 +6,8 @@ Route::get('download-pdf', 'DownloadController@downloadPDF');
 
 Route::prefix('/gtrade/')->group(function () {	
 
+	Route::redirect('/', '.gtrade/login');
+
 //Authentication routes
 	Auth::routes();
 
