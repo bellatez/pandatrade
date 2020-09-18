@@ -2,7 +2,6 @@
 
 Route::redirect('/gtrade', '/gtrade/login');
 Route::redirect('/', '/gtrade/login');
-Route::redirect('/.gtrade/login', '/gtrade/login');
 
 Route::get('download-pdf', 'DownloadController@downloadPDF');
 

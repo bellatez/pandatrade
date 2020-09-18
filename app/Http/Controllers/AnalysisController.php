@@ -28,6 +28,8 @@ class AnalysisController extends Controller
             'from' => $now,
             'to' => $to
         ];
+
+        $searchingVals = $constraints;
         //count each item in the various lists and display on the index page
         $productcount=product::all()->Where('status', 1)->where('user_id', Auth::user()->id)->count();
         $finishedcount=product::all()->Where('status', 0)->where('user_id', Auth::user()->id)->count();
@@ -35,7 +37,7 @@ class AnalysisController extends Controller
         $transactioncount=transaction::all()->Where('user_id', Auth::user()->id)->count();
         $balancesheet = $this->getBalanceSheet($constraints);        
 
-        return view('analysis.index', compact('productcount', 'finishedcount', 'debtcount', 'transactioncount', 'balancesheet', ['searchingVals' => $constraints]));
+        return view('analysis.index', compact('productcount', 'finishedcount', 'debtcount', 'transactioncount', 'balancesheet','searchingVals'));
     }
 
     //return all data from transactions table lying between a certain providing date range
