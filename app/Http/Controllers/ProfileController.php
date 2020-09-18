@@ -47,10 +47,11 @@ class ProfileController extends Controller
             'email'=>'required|email',
     		// 'contact'=>'numeric|max:11',
             'password'=>'between:6,25|confirmed'
-    	]);
+        ]);
         
+        $users = Auth::user();
         //change the password of the user if it needs to be changed
-        if ($request->password = 'change') {
+        if ($request->password == 'change') {
             $password = bcrypt($request->password);
             $users->password= $password;
         }
