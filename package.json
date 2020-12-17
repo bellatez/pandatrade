@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.10.22",
     "datatables.net-bs": "^1.10.19",
     "fullcalendar": "^3.9.0",
     "moment": "^2.22.2",
